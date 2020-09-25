@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "axios";
+import Badge from "@material-ui/core/Badge";
 
 function Popup({ selected, closePopup }) {
   const selectedID = selected.imdbID;
@@ -14,6 +15,12 @@ function Popup({ selected, closePopup }) {
       });
   };
 
+  const badgeStyle = {
+    position: "absolute",
+    left: "540px",
+    borderRadius: "30px",
+    zIndex: 1,
+  };
   const fields = {
     Plot: selected.Plot,
     "Release Date": selected.Released,
@@ -21,7 +28,7 @@ function Popup({ selected, closePopup }) {
     Director: selected.Director,
     Actors: selected.Actors,
     Language: selected.Language,
-    Rating: selected.imdbRating,
+    // Rating: selected.imdbRating,
   };
 
   const adminLogin = sessionStorage.getItem("email") === "admin";
@@ -32,7 +39,14 @@ function Popup({ selected, closePopup }) {
         <h2>
           {selected.Title} <span>({selected.Year})</span>
         </h2>
-        <p className="rating"></p>
+        <br />
+        <br />
+        <Badge
+          style={badgeStyle}
+          badgeContent={selected.imdbRating}
+          color="error"
+          fullWidth
+        ></Badge>
         <div className="plot">
           <img src={selected.Poster} alt="movieResult" />
           <p>
