@@ -1,13 +1,253 @@
-body {
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  font-family: "montserrat", sans-serif;
+  background-color: white;
+  background-image: url("https://www.publicdomainpictures.net/pictures/30000/velka/film-background-1334067869u9d.jpg")
+
 }
+
+header {
+  padding: 50px 15px 0px;
+}
+
+header h1 {
+  color: #4484c4;
+  font-size: 48px;
+  font-weight: 500;
+  text-align: center;
+}
+
+main {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+section {
+  padding: 15px;
+}
+
+.searchbox {
+  display: block;
+  width: 100%;
+  padding: 15px;
+
+  border: none;
+  outline: none;
+  background: none;
+
+  background-color: #eee;
+  border-radius: 8px;
+
+  color: #53565a;
+  font-size: 20px;
+  font-weight: 300;
+
+  transition: 0.4s ease-out;
+}
+
+.searchbox:focus {
+  box-shadow: 0px 0px 8px 3px #4484c4;
+}
+
+.results {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0px -15px;
+}
+
+.results .result {
+  width: 33.333%;
+  min-width: 250px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.results .result img {
+  display: block;
+  width: 100%;
+}
+
+.results .result h3 {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 600;
+  padding: 10px;
+  background: white;
+  flex: 1 1 100%;
+  transition: 0.4s ease-out;
+}
+
+.results .result:hover h3 {
+  background: #fff;
+  color: #223343;
+}
+
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  background-image: url("http://www.baltana.com/files/wallpapers-16/4K-Black-Background-Design-HD-Wallpapers-40664.jpg");
+  overflow-y: scroll;
+}
+
+.popup .content {
+  display: block;
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 25px;
+
+  color: #fff;
+}
+
+.popup .content h2 {
+  font-size: 28px;
+  font-weight: 600;
+}
+.popup .content h2 span {
+  font-weight: 300;
+  font-size: 20px;
+}
+
+.popup .content .rating {
+  margin-bottom: 30px;
+}
+
+.popup .content .plot {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0px -15px 30px;
+}
+
+.popup .content .plot img {
+  flex: 1 1 50%;
+  max-width: 300px;
+  padding: 0px 15px;
+}
+
+.popup .content .plot p {
+  flex: 1 1 50%;
+  padding: 15px;
+}
+
+.popup .content .close {
+  display: inline-block;
+  padding: 15px 30px;
+  font-size: 18px;
+  font-weight: 700;
+
+  background: #4484c4;
+  color: #fff;
+  border-radius: 8px;
+  cursor: pointer;
+
+  transition: 0.4s ease-out;
+}
+
+.popup .content .close:hover {
+  background: #223343;
+}
+
+.popup .content .delete {
+  display: inline-block;
+  padding: 15px 30px;
+  font-size: 18px;
+  font-weight: 700;
+
+  background: #4484c4;
+  color: #fff;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-left: 10px;
+  transition: 0.4s ease-out;
+}
+
+.popup .content .delete:hover {
+  background: #223343;
+}
+.App .add {
+  display: inline-block;
+  padding: 5px 30px;
+  font-size: 18px;
+  font-weight: 700;
+  background: #4484c4;
+  color: #fff;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-left: 10px;
+  transition: 0.4s ease-out;
+  position: absolute;
+  left: 120px;
+  top: 15px;
+}
+
+.App .add:hover {
+  background: #223343;
+}
+
+.form-input {
+  margin: 200px;
+
+}
+.form-input .login {
+  display: inline-block;
+  padding: 15px 10px;
+  font-size: 18px;
+  font-weight: 700;
+  width: 10%;
+  background: #c32b0b;
+  color: #fff;
+  border-radius: 8px;
+  cursor: pointer;
+  margin: 5px;
+  transition: 0.4s ease-out;
+}
+
+.form-input .login:hover {
+  background: #223343;
+}
+
+.App .logout {
+	display: inline-block;
+	padding: 5px 5px;
+	font-size: 15px;
+	font-weight: 500;
+	background: #c32b0b;
+	color: #fff;
+	border-radius: 8px;
+	cursor: pointer;
+	margin: 5px;
+	transition: 0.4s ease-out;
+  }
+  
+  .App .logout:hover {
+	background: #223343;
+  }
+
+  .addButton {
+	display: inline-block;
+	padding: 5px 5px;
+	font-size: 15px;
+	font-weight: 500;
+	background: #c32b0b;
+	color: #fff;
+	border-radius: 8px;
+	cursor: pointer;
+	margin: 5px;
+	transition: 0.4s ease-out;
+  }
+  
+  .addButton:hover {
+	background: #223343;
+  }
